@@ -24,6 +24,7 @@ public class Lab030_char_Literal {
         System.out.println("Rohit is best"+carriage_return+"Sharma");//It will delete the previous sentence
 
         System.out.println("Hi, This is a First line"+new_line+"This is second line\nThis is Third line");
+        //  \n should be used within double quote only
 
         char c10 = 'A';
         //  // ASCII, (limited numbers) - A -> 65

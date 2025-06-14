@@ -1,6 +1,6 @@
 package ex_02_Java_Basics2;
 
-public class Lab020_printF {
+public class lab020Printf {
     public static void main(String[] args) {
         int a = 10;
         System.out.print("print command will print in same line or without new line");
