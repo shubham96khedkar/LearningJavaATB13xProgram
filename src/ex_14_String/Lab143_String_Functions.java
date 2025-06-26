@@ -51,6 +51,7 @@ public class Lab143_String_Functions {
 
         // 10. substring( , )  , sonal
         System.out.println(name.substring(1, 3));
+        //BOTH 'S' ARE SMALL IN substring.Always remember this
         //It will print index no. 1,2 and not index 3.Only till 2nd index
 
         // 11. toLowerCase()
@@ -85,6 +86,7 @@ public class Lab143_String_Functions {
         System.out.println(n.indexOf("d"));
         System.out.println(n.lastIndexOf("d"));
         System.out.println(n.lastIndexOf("s"));
+        //For characters which are not present in the String, it will always show index as -1
 
     }
 }
