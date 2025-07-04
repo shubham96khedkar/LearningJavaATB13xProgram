@@ -12,6 +12,6 @@ public class Lab157_Interview_2nd_Highest_No {
         Arrays.sort(numbers);
         System.out.println(numbers[numbers.length-2]);
         System.out.println(numbers[numbers.length-3]);
-        // You find it without using the sort function.
+        //Assignment---->>>> You find it without using the sort function.
     }
 }

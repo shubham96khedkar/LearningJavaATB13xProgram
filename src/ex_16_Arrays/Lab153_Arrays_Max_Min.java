@@ -12,27 +12,30 @@ public class Lab153_Arrays_Max_Min {
         System.out.println(min_output);
 
     }
-
-    static int give_me_max(int[] array){
-        int max = array[0];
+//First JVM will search for main method.Then it will go in line no.9 inside main method and search that method name in the program
+//After matching method name it will pass input parameter as array i.e line no.6 and now the integer array will be passed in that method name in place of arrayz
+//arrayz is a local variable and its life will bee only inside the brackets of that method
+    static int give_me_max(int[] arrayz) {
+        int max = arrayz[0];
         // logic
-        for (int i = 0; i < array.length ; i++) {
-            if(array[i] > max){
-                max = array[i];
+        for (int i = 0; i < arrayz.length; i++) {
+            if (arrayz[i] > max) {
+                max = arrayz[i];
             }
+            //System.out.println(arrayz[]);
         }
-
         return max;
-//REMEMBER that from line no. 17 to line no. 25, the variable name should be same everywhere i.e max or any other name
-//otherwise it will show error if variable name is not same
     }
+//REMEMBER that from line no. 18 to line no. 27, the variable name should be same everywhere i.e max or any other name
+//otherwise it will show error if variable name is not same
 
-    static int give_me_min(int[] array){
-        int min = array[0];
+
+    static int give_me_min(int[] array2){
+        int min = array2[0];
         // logic
-        for (int i = 0; i < array.length ; i++) {
-            if(array[i] < min){
-                min = array[i];
+        for (int i = 0; i < array2.length ; i++) {
+            if(array2[i] < min){
+                min = array2[i];
             }
         }
 
