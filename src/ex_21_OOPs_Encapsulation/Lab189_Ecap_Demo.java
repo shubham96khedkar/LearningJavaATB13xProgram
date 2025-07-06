@@ -48,7 +48,7 @@ class GoodVWOLogin{
 
     public String getUsername() {
         return username;
-//For creating getter and setter,take the typing cursor in that class,then right click and then click on generate
+//For creating getter and setter,take the typing cursor in that class,then select private String name and private long bal then right click and then click on generate
 //then click on getter and setter,then select both username and password and click on OK.Then it will create total 4 methods
     }
 
