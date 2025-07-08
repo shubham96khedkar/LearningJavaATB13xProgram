@@ -32,4 +32,15 @@ class P{
 //Static variables are loaded at class loader
 
     int b = 10;
+
+    static {
+        // This is static block.
+        //Static block is called whenever a class a loaded for the first time.
+        //So when we run the program from main method, first when class P is loaded in line no.6 this static block will be called and the print statement will be printed
+        //The moment we write P in line no.6 the class P will be loaded
+        System.out.println("Hi, this is called, becoz, class is laoded");
+
+
+        // The usage of static block is if you want to call some of the methods, like calling a database connection, calling an Excel collection,then we can write the logic in static block
+    }
 }
