@@ -34,6 +34,7 @@ public class Lab247_Vector {
 
         System.out.println(" ----  Iterator ");
 //Iterator allows to access the elements one by one for any datatype.It does not matter what is the datatype whether it is Integer or String
+//Iterator is an INTERFACE
         Iterator iterator = v.iterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next());
