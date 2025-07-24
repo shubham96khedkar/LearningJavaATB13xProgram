@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "a26403e1-ec7c-4bc0-8797-afe93295a89e",
+		"name": "Project #1. SOAP Project ISBN Checker",
+		"description": "This API is basically going to check if a 10 digit book ISBN number is valid or not",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25804660",
+		"_collection_link": "https://universal-crater-74325.postman.co/workspace/ATB13X~221fb918-c48f-4e7e-8a5f-568fce493fc2/collection/25804660-a26403e1-ec7c-4bc0-8797-afe93295a89e?action=share&source=collection_link&creator=25804660"
+	},
+	"item": [
+		{
+			"name": "TC#1. POSITIVE",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <IsValidISBN13 xmlns=\"http://webservices.daehosting.com/ISBN\">\r\n      <sISBN>99921-58-10-7</sISBN>\r\n    </IsValidISBN13>\r\n  </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webservices.daehosting.com/services/isbnservice.wso",
+					"protocol": "https",
+					"host": [
+						"webservices",
+						"daehosting",
+						"com"
+					],
+					"path": [
+						"services",
+						"isbnservice.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC#2. NEGATIVE Invalid ISBN",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <IsValidISBN13 xmlns=\"http://webservices.daehosting.com/ISBN\">\r\n      <sISBN>09921-58-10-7</sISBN>\r\n    </IsValidISBN13>\r\n  </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webservices.daehosting.com/services/isbnservice.wso",
+					"protocol": "https",
+					"host": [
+						"webservices",
+						"daehosting",
+						"com"
+					],
+					"path": [
+						"services",
+						"isbnservice.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC#3. NEGATIVE Invalid ISBN special chars",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <IsValidISBN13 xmlns=\"http://webservices.daehosting.com/ISBN\">\r\n      <sISBN>abc</sISBN>\r\n    </IsValidISBN13>\r\n  </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webservices.daehosting.com/services/isbnservice.wso",
+					"protocol": "https",
+					"host": [
+						"webservices",
+						"daehosting",
+						"com"
+					],
+					"path": [
+						"services",
+						"isbnservice.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC#4. NEGATIVE Invalid ISBN-Invalid Headers",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <IsValidISBN13 xmlns=\"http://webservices.daehosting.com/ISBN\">\r\n      <sISBN>abc</sISBN>\r\n    </IsValidISBN13>\r\n  </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webservices.daehosting.com/services/isbnservice.wso",
+					"protocol": "https",
+					"host": [
+						"webservices",
+						"daehosting",
+						"com"
+					],
+					"path": [
+						"services",
+						"isbnservice.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC#5. NEGATIVE Invalid ISBN-Chinese char",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <IsValidISBN13 xmlns=\"http://webservices.daehosting.com/ISBN\">\r\n      <sISBN>𡨸漢</sISBN>\r\n    </IsValidISBN13>\r\n  </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webservices.daehosting.com/services/isbnservice.wso",
+					"protocol": "https",
+					"host": [
+						"webservices",
+						"daehosting",
+						"com"
+					],
+					"path": [
+						"services",
+						"isbnservice.wso"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
